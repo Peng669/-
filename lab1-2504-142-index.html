@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>美丽校园—春华</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "微软雅黑", sans-serif;
+        }
+        body {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.8;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #2c5c97;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        h2 {
+            text-align: right;
+            color: #666;
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding-right: 50px;
+        }
+        hr {
+            border: none;
+            height: 2px;
+            background-color: #2c5c97;
+            margin: 20px 0;
+        }
+        h3 {
+            font-size: 24px;
+            color: #2c5c97;
+            margin: 30px 0 15px;
+            padding-left: 10px;
+            border-left: 4px solid #2c5c97;
+        }
+        p {
+            text-indent: 2em;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        ul {
+            margin-left: 50px;
+            font-size: 16px;
+        }
+        li {
+            margin: 8px 0;
+        }
+        .nav {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .img-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 30px 0;
+            padding-left: 50px;
+        }
+        .img-box {
+            width: 220px;
+            height: 220px;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        .img-box img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <h1 id="top">美丽校园—春华</h1>
+    <h2>鲁东大学计算机科学与技术学院 2025级 智能机器人方向 某某某</h2>
+    <hr>
+
+    <div class="nav">
+        <a href="#nature">跳转到「自然风光」</a>
+        <a href="#culture">跳转到「人文景观」</a>
+    </div>
+
+    <h3 id="nature">自然风光</h3>
+    <p>
+        当春风拂过鲁东大学的校园，整个世界都被染上了温柔的色彩。从南门进入，主干道两侧的玉兰花率先绽放，粉白相间的花瓣在阳光下舒展，像一群亭亭玉立的少女，将春日的浪漫铺满了整条道路。沿着小路往图书馆方向走，人工湖的湖面波光粼粼，岸边的垂柳抽出了嫩绿的枝条，随风轻摆，仿佛在梳理自己的长发。偶尔有几只水鸟掠过水面，激起一圈圈涟漪，为静谧的湖面增添了几分灵动。
+    </p>
+    <p>
+        校园里的樱花大道是春日最动人的风景，每年四月，满树的樱花如云似霞，粉白的花瓣随风飘落，铺成一条浪漫的花径。同学们或驻足拍照，或在树下漫步，享受着春日的美好。除了樱花，校园里还有迎春、海棠、丁香等多种花卉，次第开放，将整个校园装点成了一座花园。午后的阳光透过树叶的缝隙洒在地上，形成斑驳的光影，走在校园的小路上，听着鸟鸣，闻着花香，仿佛置身于一幅绝美的春日画卷中。
+    </p>
+    <p>
+        鲁东大学的校园依山傍海，春日里的校园更是充满了生机与活力。无论是清晨在操场上跑步的同学，还是午后在草坪上看书的学子，都在这美好的春光里，书写着属于自己的青春故事。校园里的每一处风景，都承载着鲁东学子的梦想与希望，见证着一代又一代学子的成长与蜕变。
+    </p>
+
+    <h3 id="culture">人文景观</h3>
+    <ul>
+        <li>鲁东大学图书馆</li>
+        <li>鲁东大学博物馆</li>
+        <li>鲁东大学文化广场</li>
+        <li>鲁东大学校友园</li>
+    </ul>
+
+    <div class="img-container">
+        <div class="img-box">
+            <img src="./图片1.jpg" alt="鲁东大学校园春景">
+        </div>
+        <div class="img-box">
+            <img src="./图片2.jpg" alt="鲁东大学樱花大道">
+        </div>
+        <div class="img-box">
+            <img src="./图片3.png" alt="鲁东大学图书馆">
+        </div>
+    </div>
+
+    <div class="nav" style="margin-top: 50px;">
+        <a href="#top">返回顶部</a>
+    </div>
+</body>
+</html>
