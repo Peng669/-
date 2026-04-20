@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -6,7 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>数字展销平台首页</title>
     <!-- 引入CSS文件 -->
-    <link rel="stylesheet" href="lab2-2504-142-index.css">
+    <link rel="stylesheet" href="css/lab2-xxx-index.css">
+    <style>
+        /* 简单给图片加样式，防止变形 */
+        .book-item img {
+            width: 100px;
+            height: 140px;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto 5px;
+        }
+    </style>
 </head>
 <body>
     <!-- 1. 头部区域 (固定定位 + 浮动) -->
@@ -44,10 +53,26 @@
                 <h3>热门推荐</h3>
                 <div class="book-list">
                     <!-- 父盒子，子元素浮动 -->
-                    <div class="book-item">计算机基础</div>
-                    <div class="book-item">Python编程</div>
-                    <div class="book-item">数据结构</div>
-                    <div class="book-item">网络安全</div>
+                    <div class="book-item">
+                        <!-- 第1张图片 -->
+                        <img src="images/book1.jpg" alt="计算机基础">
+                        计算机基础
+                    </div>
+                    <div class="book-item">
+                        <!-- 第2张图片 -->
+                        <img src="images/book2.jpg" alt="Python编程">
+                        Python编程
+                    </div>
+                    <div class="book-item">
+                        <!-- 第3张图片 -->
+                        <img src="images/book3.jpg" alt="数据结构">
+                        数据结构
+                    </div>
+                    <div class="book-item">
+                        <!-- 第4张图片 -->
+                        <img src="images/book4.jpg" alt="网络安全">
+                        网络安全
+                    </div>
                 </div>
             </section>
 
