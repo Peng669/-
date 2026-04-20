@@ -2,86 +2,96 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>数字展销平台首页</title>
-    <!-- 引入CSS文件 -->
-    <link rel="stylesheet" href="css/lab2-xxx-index.css">
+    <title>数字图书展销平台</title>
+    <link rel="stylesheet" href="./css/lab2-xxx-xxx-index.css">
 </head>
 <body>
-    <!-- 1. 头部区域 (固定定位 + 浮动) -->
+  
     <header class="header">
-        <div class="logo">图书展销平台</div>
+        <div class="logo">
+            <h2>春韵图书展销</h2>
+        </div>
         <nav class="nav">
             <ul>
                 <li><a href="#">首页</a></li>
                 <li><a href="#">图书分类</a></li>
                 <li><a href="#">热门推荐</a></li>
                 <li><a href="#">新书上市</a></li>
-                <li><a href="#">关于我们</a></li>
+                <li><a href="#">联系我们</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- 2. 主体内容 (浮动三栏布局) -->
-    <div class="container">
-        <!-- 左侧栏 (相对定位) -->
-        <aside class="sidebar-left">
-            <h3>图书分类</h3>
-            <ul>
-                <li>计算机科学</li>
+  
+    <main class="main clearfix">
+     
+        <aside class="left-sidebar">
+            <h3>图书分类导航</h3>
+            <ul class="class-list">
                 <li>文学小说</li>
+                <li>科技计算机</li>
+                <li>教育考试</li>
                 <li>经管励志</li>
-                <li>历史社科</li>
-                <li>少儿读物</li>
+                <li>历史人文</li>
             </ul>
         </aside>
 
-        <!-- 中间栏 (核心内容区) -->
-        <main class="content">
-            <!-- 第一部分：热门推荐 (浮动排列) -->
-            <section class="hot-recommend">
-                <h3>热门推荐</h3>
-                <div class="book-list">
-                    <!-- 父盒子，子元素浮动 -->
-                    <div class="book-item">计算机基础</div>
-                    <div class="book-item">Python编程</div>
-                    <div class="book-item">数据结构</div>
-                    <div class="book-item">网络安全</div>
+    
+        <section class="center-content">
+        
+            <div class="book-show">
+                <h3>图书展示区</h3>
+                <div class="book-item">
+                    <div class="book-img">
+                        <img src="./img/book1.jpg" alt="图书封面">
+                        <div class="book-mask">点击查看详情</div>
+                    </div>
+                    <p>精选畅销图书</p>
                 </div>
-            </section>
+            </div>
 
-            <!-- 第二部分：新书上市 (Table布局) -->
-            <section class="new-book">
+        
+            <div class="hot-recommend">
+                <h3>热门推荐</h3>
+                <div class="hot-item">热门书籍1</div>
+                <div class="hot-item">热门书籍2</div>
+                <div class="hot-item">热门书籍3</div>
+                <div class="hot-item">热门书籍4</div>
+            </div>
+
+          
+            <div class="new-book">
                 <h3>新书上市</h3>
-                <table border="1" cellpadding="8" cellspacing="0">
+                <table border="1">
                     <tr>
                         <th>书名</th>
                         <th>作者</th>
-                        <th>定价</th>
-                        <th>出版日期</th>
+                        <th>价格</th>
                     </tr>
                     <tr>
-                        <td>Web前端开发</td>
+                        <td>人工智能入门</td>
                         <td>张三</td>
-                        <td>¥79.00</td>
-                        <td>2024-01</td>
+                        <td>¥49.9</td>
                     </tr>
                     <tr>
-                        <td>人工智能导论</td>
+                        <td>web前端实战</td>
                         <td>李四</td>
-                        <td>¥69.00</td>
-                        <td>2024-02</td>
+                        <td>¥59.9</td>
                     </tr>
                 </table>
-            </section>
-        </main>
+            </div>
+        </section>
 
-        <!-- 右侧栏 (固定定位) -->
-        <aside class="sidebar-right">
-            <p>促销广告</p>
-            <p>满100减30</p>
+     
+        <aside class="right-sidebar">
+            <h4>限时促销活动</h4>
+            <p>全场满100减20</p>
+            <p>会员专享8折</p>
         </aside>
-    </div>
+    </main>
 
+    <footer class="footer">
+        <p>版权所有 © 数字图书展销平台</p>
+    </footer>
 </body>
-</html>
+</html> 
