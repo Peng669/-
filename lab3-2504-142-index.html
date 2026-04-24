@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数字展销平台首页</title>
+    <link rel="stylesheet" href="./css/lab3-2504-142-index.css">
+    <style>
+        .book-item img {
+            width: 100px;
+            height: 140px;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 1. 遮罩层 父容器 -->
+    <div class="mask" id="mask"></div>
+
+    <!-- 2. 登录注册弹窗 子容器 -->
+    <div class="login-box" id="loginBox">
+        <!-- 登录表单 -->
+        <div class="login-form" id="loginForm">
+            <h2>用户登录</h2>
+            <div class="input-item">
+                <label>账号：</label>
+                <input type="text" id="loginUsername" placeholder="请输入账号">
+            </div>
+            <div class="input-item">
+                <label>密码：</label>
+                <input type="password" id="loginPwd" placeholder="请输入密码">
+            </div>
+            <div class="btn-group">
+                <button class="login-btn" onclick="login()">立即登录</button>
+                <button class="reg-switch-btn" onclick="showRegister()">没有账号？去注册</button>
+            </div>
+        </div>
+
+        <!-- 注册表单 默认隐藏 -->
+        <div class="register-form" id="registerForm">
+            <h2>用户注册</h2>
+            <div class="input-item">
+                <label>设置账号：</label>
+                <input type="text" id="regUsername" placeholder="请设置账号">
+            </div>
+            <div class="input-item">
+                <label>设置密码：</label>
+                <input type="password" id="regPwd" placeholder="请设置密码">
+            </div>
+            <div class="input-item">
+                <label>确认密码：</label>
+                <input type="password" id="regPwd2" placeholder="再次输入密码">
+            </div>
+            <div class="btn-group">
+                <button class="reg-btn" onclick="register()">立即注册</button>
+                <button class="login-switch-btn" onclick="showLogin()">已有账号？去登录</button>
+            </div>
+        </div>
+
+        <!-- 关闭弹窗按钮 -->
+        <span class="close-btn" onclick="closeBox()">×</span>
+    </div>
+
+
+    <header class="header">
+        <div class="logo">图书展销平台</div>
+        <nav class="nav">
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">图书分类</a></li>
+                <li><a href="#">热门推荐</a></li>
+                <li><a href="#">新书上市</a></li>
+                <li><a href="#">关于我们</a></li>
+                <!-- 点击唤起登录弹窗 -->
+                <li><a href="javascript:;" onclick="openLogin()">登录/注册</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    
+    <div class="container">
+        
+        <aside class="sidebar-left">
+            <h3>图书分类</h3>
+            <ul>
+                <li>计算机科学</li>
+                <li>文学小说</li>
+                <li>经管励志</li>
+                <li>历史社科</li>
+                <li>少儿读物</li>
+            </ul>
+        </aside>
+
+        <main class="content">
+            
+            <section class="hot-recommend">
+                <h3>热门推荐</h3>
+                <div class="book-list">
+                    
+                    <div class="book-item">
+                        
+                        <img src="./img/图片4.webp" alt="四大名著">
+                        四大名著
+                    </div>
+                    <div class="book-item">
+                        
+                        <img src="./img/图片5.jpg" alt="四大名著">
+                        四大名著
+                    </div>
+                    <div class="book-item">
+                        
+                        <img src="./img/图片6.png" alt="四大名著">
+                        四大名著
+                    </div>
+                    <div class="book-item">
+                        
+                        <img src="./img/图片7.jpg" alt="四大名著">
+                        四大名著
+                    </div>
+                </div>
+            </section>
+
+           
+            <section class="new-book">
+                <h3>新书上市</h3>
+                <table border="1" cellpadding="8" cellspacing="0">
+                    <tr>
+                        <th>书名</th>
+                        <th>作者</th>
+                        <th>定价</th>
+                        <th>出版日期</th>
+                    </tr>
+                    <tr>
+                        <td>Web前端开发</td>
+                        <td>张三</td>
+                        <td>¥79.00</td>
+                        <td>2024-01</td>
+                    </tr>
+                    <tr>
+                        <td>人工智能导论</td>
+                        <td>李四</td>
+                        <td>¥69.00</td>
+                        <td>2024-02</td>
+                    </tr>
+                </table>
+            </section>
+        </main>
+
+        <aside class="sidebar-right">
+            <p>促销广告</p>
+            <p>满100减30</p>
+        </aside>
+    </div>
+
+    <script>
+        // 打开登录弹窗
+        function openLogin(){
+            document.getElementById('mask').style.display = 'block';
+            document.getElementById('loginBox').style.display = 'block';
+            // 默认显示登录页
+            showLogin();
+        }
+
+        // 关闭弹窗
+        function closeBox(){
+            document.getElementById('mask').style.display = 'none';
+            document.getElementById('loginBox').style.display = 'none';
+        }
+
+        // 切换显示登录
+        function showLogin(){
+            document.getElementById('loginForm').style.display = 'block';
+            document.getElementById('registerForm').style.display = 'none';
+        }
+
+        // 切换显示注册
+        function showRegister(){
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('registerForm').style.display = 'block';
+        }
+
+        // 注册功能 + HTML5本地存储
+        function register(){
+            let username = document.getElementById('regUsername').value.trim();
+            let pwd = document.getElementById('regPwd').value.trim();
+            let pwd2 = document.getElementById('regPwd2').value.trim();
+
+            // 基础校验
+            if(!username || !pwd || !pwd2){
+                alert('账号和密码不能为空！');
+                return;
+            }
+            if(pwd !== pwd2){
+                alert('两次输入密码不一致！');
+                return;
+            }
+
+            // 读取本地存储已有用户
+            let userList = JSON.parse(localStorage.getItem('webUser')) || [];
+
+            // 判断账号是否已注册
+            for(let i=0;i<userList.length;i++){
+                if(userList[i].user === username){
+                    alert('该账号已经注册，请直接登录！');
+                    return;
+                }
+            }
+
+            // 保存新用户到本地存储
+            let newUser = {user:username,password:pwd};
+            userList.push(newUser);
+            localStorage.setItem('webUser',JSON.stringify(userList));
+
+            alert('注册成功！请登录');
+            showLogin();
+        }
+
+        // 登录功能 + 本地存储比对验证
+        function login(){
+            let username = document.getElementById('loginUsername').value.trim();
+            let pwd = document.getElementById('loginPwd').value.trim();
+
+            if(!username || !pwd){
+                alert('请输入账号和密码！');
+                return;
+            }
+
+            // 获取本地存储用户数据
+            let userList = JSON.parse(localStorage.getItem('webUser')) || [];
+            let loginSuccess = false;
+
+            // 遍历校验账号密码
+            for(let i=0;i<userList.length;i++){
+                if(userList[i].user === username && userList[i].password === pwd){
+                    loginSuccess = true;
+                    break;
+                }
+            }
+
+            if(loginSuccess){
+                alert('登录成功！欢迎进入图书展销平台');
+                closeBox();
+            }else{
+                alert('账号或密码错误，请核对！');
+            }
+        }
+    </script>
+</body>
+</html>
