@@ -1,0 +1,204 @@
+/* 全局基础样式 */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+.header{
+    width: 100%;
+    height: 70px;
+    background: #2c3e50;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+}
+.nav ul{
+    display: flex;
+    gap: 30px;
+}
+.nav a{
+    color: #fff;
+    text-decoration: none;
+}
+
+/* 新增：头部图标样式 */
+.header-icons{
+    display: flex;
+    gap: 20px;
+    font-size: 22px;
+}
+.icon{
+    cursor: pointer;
+    transition: transform 0.6s ease;
+}
+/* 购物车、搜索图标悬停旋转动画 */
+.cart-icon:hover, .search-icon:hover{
+    transform: rotate(360deg);
+}
+
+.container{
+    width: 1200px;
+    margin: 20px auto;
+    display: flex;
+    gap: 20px;
+}
+.sidebar-left{
+    width: 200px;
+    background: #ecf0f1;
+    padding:15px;
+}
+.content{
+    flex: 1;
+    padding:15px;
+}
+.sidebar-right{
+    width: 180px;
+    background: #ecf0f1;
+    padding:15px;
+}
+.hot-recommend,.new-book{
+    margin-bottom: 30px;
+}
+.book-list{
+    display:flex;
+    gap:20px;
+    margin-top:15px;
+}
+.book-item{
+    text-align:center;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+.book-item img {
+    width: 100px;
+    height: 140px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 5px;
+    transition: all 0.3s ease;
+}
+/* 热门图书动效：鼠标悬停图片时，右移、阴影加深、放大 */
+.book-item:hover{
+    transform: translateX(10px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+.book-item:hover img{
+    transform: scale(1.1);
+}
+
+/* 登录弹窗父子层级+显示隐藏样式 */
+.mask{
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    position:fixed;
+    top:0;
+    left:0;
+    display:none;
+    z-index:998;
+}
+.login-box{
+    width:420px;
+    height:450px;
+    background:#fff;
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    display:none;
+    z-index:999;
+    padding:30px;
+    border-radius:10px;
+}
+.login-form{
+    display:block;
+}
+.register-form{
+    display:none;
+}
+.login-box h2{
+    text-align:center;
+    margin-bottom:30px;
+    color:#2c3e50;
+}
+.input-item{
+    margin:20px 0;
+}
+.input-item input{
+    width:100%;
+    height:40px;
+    margin-top:8px;
+    padding:0 10px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+.btn-group{
+    margin-top:30px;
+}
+.login-btn,.reg-btn{
+    width:100%;
+    height:45px;
+    background:#3498db;
+    color:#fff;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:16px;
+    transition: all 0.3s ease;
+}
+/* 按钮动画：“登录”按钮悬停时背景色渐变、缩放 */
+.login-btn:hover, .reg-btn:hover{
+    background: linear-gradient(90deg, #3498db, #2980b9);
+    transform: scale(1.05);
+}
+.reg-switch-btn,.login-switch-btn{
+    width:100%;
+    margin-top:15px;
+    border:none;
+    background:none;
+    color:#3498db;
+    cursor:pointer;
+}
+.close-btn{
+    position:absolute;
+    top:10px;
+    right:15px;
+    font-size:30px;
+    cursor:pointer;
+    color:#666;
+}
+
+/* 新增：轮播图样式与动画 */
+.carousel{
+    width: 1200px;
+    height: 300px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 8px;
+}
+.carousel-container{
+    width: 100%;
+    height: 900px; /* 3张图高度总和 */
+    animation: carouselMove 9s infinite linear;
+}
+.carousel-item{
+    width: 100%;
+    height: 300px;
+}
+.carousel-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+/* 轮播图从下向上滚动 */
+@keyframes carouselMove{
+    0% { transform: translateY(0); }
+    33% { transform: translateY(-300px); }
+    66% { transform: translateY(-600px); }
+    100% { transform: translateY(0); }
+}
